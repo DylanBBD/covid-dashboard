@@ -1,0 +1,32 @@
+<mat-card class="country-card">
+    <mat-card-header>
+      <mat-card-title>{{data.country}}</mat-card-title>
+      <mat-card-subtitle>{{data.code}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="card-content">
+            <span class="data-label">Confirmed: </span>
+            <span>{{ data.confirmed | number }}</span>
+        </div>
+        <div class="card-content">
+            <span class="data-label">Recovered: </span>
+            <span>{{ data.recovered | number }}</span>
+        </div>
+        <div class="card-content">
+            <span class="data-label">Critical: </span>
+            <span>{{ data.critical | number }}</span>
+        </div>
+        <div class="card-content">
+            <span class="data-label">Deaths: </span>
+            <span>{{ data.deaths | number }}</span>
+        </div>
+        <div *ngIf="totalCases != null && totalCases !== 0" class="card-content">
+            <span class="data-label">World Case Percentage: </span>
+            <span class="negative">{{ (data.confirmed / totalCases * 100) | number : '1.0-2' }}%</span>
+        </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button (click)="handleDeleteCard()">DELETE</button>
+    </mat-card-actions>
+</mat-card>

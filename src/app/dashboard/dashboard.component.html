@@ -1,0 +1,32 @@
+<mat-grid-list *ngIf="totalData != null" cols="5" [rowHeight]="100">
+    <mat-grid-tile class="dashboard-tile">
+        <div class="dashboard-content">
+            <div class="dashboard-title">Confirmed</div>
+            <div class="dashboard-value">{{ totalData.confirmed | number }}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="dashboard-tile">
+        <div class="dashboard-content">
+            <div class="dashboard-title">Recovered</div>
+            <div class="dashboard-value">{{totalData.recovered | number}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="dashboard-tile">
+        <div class="dashboard-content">
+            <div class="dashboard-title">Critical</div>
+            <div class="dashboard-value">{{totalData.critical | number}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="dashboard-tile">
+        <div class="dashboard-content">
+            <div class="dashboard-title">Deaths</div>
+            <div class="dashboard-value">{{totalData.deaths | number}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="dashboard-tile">
+        <div class="dashboard-content">
+            <div class="dashboard-title">Last Updated</div>
+            <div class="dashboard-value">{{totalData.lastUpdate | date : 'HH:mm | dd-MMM-yyyy'}}</div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

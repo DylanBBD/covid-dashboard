@@ -1,0 +1,13 @@
+<div class="content-container">
+    <mat-form-field>
+        <mat-label>Country Name</mat-label>
+        <input matInput [(ngModel)]="searchString" (keyup.enter)="search()" placeholder="Ex. USA" #input>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="search()">Search</button>
+
+    <div *ngIf="countryDataList != null" class="card-container">
+        <ng-container *ngFor="let data of countryDataList; let cardIndex = index">
+            <app-country-card [data]="data" [totalCases]="totalCases" (deleteCard)="deleteCard(cardIndex)"></app-country-card>
+        </ng-container>
+    </div>
+</div>

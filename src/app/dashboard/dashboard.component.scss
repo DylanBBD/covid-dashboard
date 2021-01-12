@@ -1,0 +1,20 @@
+.dashboard-tile {
+    background-color: #673ab7;
+    color: white;
+
+    .dashboard-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .dashboard-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    
+        .dashboard-value {
+            margin-top: 5px;
+        }
+    }
+    
+}
